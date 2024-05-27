@@ -50,6 +50,25 @@ This project is a Proof of Concept (PoC) for an Influencer Dashboard that extrac
     ```bash
     node worker.js
     ```
+    
+## Project Structure
+```
+.
+├── app
+│   ├── models
+│   │   ├── Influencer.model.js
+│   │   └── Worker.model.js
+│   └── services
+│       ├── Influencer.service.js
+│       └── Worker.service.js
+├── config
+│   ├── db.js
+│   └── env.constant.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── worker.js
+```
 
 ## How It Works
 
