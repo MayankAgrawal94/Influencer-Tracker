@@ -1,5 +1,5 @@
 const Worker = require('../models/Worker.model')
-const { InfluencerConfig }  = require('../../constants/env.constant')
+const { InfluencerConfig }  = require('../../config/env.constant')
 
 const getWorkerId = async () => {
   const workers = await Worker.find({}).sort({ workerId: 1 })

@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { BasicConfig } = require('../../constants/env.constant')
+const { BasicConfig } = require('../../config/env.constant')
 const Influencer = require('../models/Influencer.model')
 const { calculateRange } = require('./Worker.service')
 
