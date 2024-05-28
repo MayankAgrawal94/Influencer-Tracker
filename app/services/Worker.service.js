@@ -38,10 +38,23 @@ exports.deregisterWorker = async (INSTANCE_ID) => {
 }
 
 exports.updateHeartbeat = async (INSTANCE_ID) => {
-  await Worker.updateOne(
-    { instanceId: INSTANCE_ID },
-    { $set: { timestamp: new Date() } }
-  )
+  try {
+    const updatedResp = await Worker.updateOne(
+      { instanceId: INSTANCE_ID },
+      { $set: { timestamp: new Date() } }
+    )
+    
+    if( updatedResp && updatedResp.acknowledged == true 
+        && updatedResp.matchedCount > 0 ) {
+        
+        return true
+    } else {
+      return false
+    }
+  } catch ( err ) {
+    console.error(`ERROR: 'updateHeartbeat' | INSTANCE_ID: ${INSTANCE_ID}`, err)
+    return false;
+  }
 }
 
 exports.getActiveWorkers = async () => {
@@ -54,8 +67,9 @@ exports.getActiveWorkers = async () => {
   return workers
 }
 
+// 0, 1, 2 -> currect: 0, length = 2, rangeSize = 500000
 exports.calculateRange = (workerId, workers) => {
-  const totalWorkers = workers.length
+  const totalWorkers = workers.length 
   const minPk = 1000000;
   const maxPk = 1999999;
   const rangeSize = Math.ceil((maxPk - minPk + 1) / totalWorkers);

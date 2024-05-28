@@ -17,9 +17,13 @@ const main = async () => {
   const workerId = await registerWorker(INSTANCE_ID)
   
   setInterval(async () => {
-    await updateHeartbeat(INSTANCE_ID)
+    const isCurrentWorkerOk = await updateHeartbeat(INSTANCE_ID)
+    if( !isCurrentWorkerOk ) {
+      console.log(`Error: 'InstanceMissedOut' | INSTANCE_ID: ${INSTANCE_ID}  | Something went wrong!`)
+      workerId = await registerWorker(INSTANCE_ID)
+    }
+
     const workers = await getActiveWorkers()
-    // const totalWorkers = workers.length
     updateFollowers(workerId, workers)
   }, 60000)
 }
