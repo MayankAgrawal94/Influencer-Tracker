@@ -91,4 +91,5 @@ This project is a Proof of Concept (PoC) for an Influencer Dashboard that extrac
 If you have any suggestions or improvements, feel free to submit a pull request or open an issue.
 
 ## Contact
-For any questions or inquiries, please contact [Mayank Agrawal] at `mnk.agrawal94@gmail.com`.
+If you have any feedback, questions, or suggestions, feel free to reach out.
+connect me at `jobs@mayankagrawal.co.in` or can DM me on [LinkedIn](https://www.linkedin.com/in/mayank-agrawal-59192940/).
