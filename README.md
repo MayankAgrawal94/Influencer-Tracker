@@ -26,7 +26,7 @@ This project is a Proof of Concept (PoC) for an Influencer Dashboard that extrac
 1. **Clone the Repository**
     ```bash
     git clone https://github.com/MayankAgrawal94/Influencer-Tracker.git
-    cd Influencer-Tracker
+    cd Influencer-Tracker/Tracker
     ```
 
 2. **Install Dependencies**
@@ -35,7 +35,7 @@ This project is a Proof of Concept (PoC) for an Influencer Dashboard that extrac
     ```
 
 3. **Setup Environment Variables**
-    Create a `.env` file in the root directory and add the following environment variables:
+    Create a `.env` file in the root directory of 'Tracker' and add the following environment variables:
     ```
     1.DB_CONNECTION_STRING=mongodb://localhost:27017
     2.DB_NAME=influencerDB
