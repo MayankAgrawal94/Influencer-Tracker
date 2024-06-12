@@ -7,8 +7,6 @@
 - Tested with Node v12.22.10 & Node v18.15.0
 
 ## Usage
-- clone this repo
-- cd into the repo
 - run `npm install` to install dependencies
 - run `npm start` to start the server
 
