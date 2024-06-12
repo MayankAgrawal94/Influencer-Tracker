@@ -1,3 +1,4 @@
+require('dotenv').config()
 const connectDB = require('./config/db')
 const { updateFollowers } = require('./app/services/Influencer.service')
 const { 
@@ -10,6 +11,7 @@ const { v4: uuidv4 } = require('uuid')
 
 connectDB()
 
+console.log( process.env.TEST01 )
 const INSTANCE_ID = uuidv4() // Unique identifier for this worker instance
 console.log( `Worker's INSTANCE_ID is "${INSTANCE_ID}"`)
 
